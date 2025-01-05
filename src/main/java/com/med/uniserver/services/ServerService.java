@@ -1,6 +1,6 @@
 package com.med.uniserver.services;
 
-import com.med.uniserver.servers.Server;
+import com.med.uniserver.entities.Server;
 
 import java.io.IOException;
 import java.util.Collection;

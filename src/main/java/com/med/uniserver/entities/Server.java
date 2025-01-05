@@ -1,4 +1,4 @@
-package com.med.uniserver.servers;
+package com.med.uniserver.entities;
 
 import com.med.uniserver.enums.Status;
 import jakarta.persistence.*;
