@@ -1,0 +1,147 @@
+<div class="table-responsive">
+  <div class="table-wrapper">
+    <div class="table-title">
+      <div class="row">
+        <h2>Manage Servers</h2>
+      </div>
+      <div class="col-sm-6">
+        <button type="button" class="btn btn-primary">Print Report</button>
+        <a href="#addEmloyeeModal" class="btn btn-success" data-toggle="modal">
+          <i class="material-icons">&#xE147;</i>
+          <span>Add New Server</span>
+        </a>
+        <span>
+          <select name="status" class="btn btn-info" style="height: 32.91px">
+            <option value="ALL">ALL</option>
+            <option value="SERVER_UP">SERVER_UP</option>
+            <option value="SERVER_DOWN">SERVER_DOWN</option>
+          </select>
+        </span>
+      </div>
+    </div>
+  </div>
+  <br />
+  <ng-container *ngIf="appState$ | async as appState">
+    <ng-container>
+      <div class="col-md-12 single-note-item tex-center">
+        <div class="spinner-border text-info" role="status"></div>
+      </div>
+    </ng-container>
+    <ng-container>
+      <table class="table table-striped table-hover" id="servers">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>IP Address</th>
+            <th>Name</th>
+            <th>Memory</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Ping</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="" width="40" height="40" /></td>
+            <td>ipAddress</td>
+            <td>name</td>
+            <td>memory</td>
+            <td>type</td>
+            <td>
+              <span class="badge"></span>
+            </td>
+            <td>
+              <a style="cursor: pointer">
+                <i class="material-icons" title="Ping server">&#xe328;</i>
+                <i class="fa fa-spinner fa-spin" style="font-size: 24px"></i>
+              </a>
+            </td>
+            <td>
+              <a class="delete" data-toggle="modal" style="cursor: pointer">
+                <i class="material-icons" data-toggle="modal" title="Delete"
+                  >&#xE872;</i
+                >
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </ng-container>
+    <ng-container>
+      <div class="alert-danger">error</div>
+    </ng-container>
+  </ng-container>
+</div>
+
+<!-- Add Employee Modal HTML -->
+<div id="addEmloyeeModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form>
+        <div class="modal-header">
+          <h4 class="modal-title">Add Server</h4>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-hidden="true"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>IP</label>
+            <input type="text" class="form-control" name="ipAddress" required />
+          </div>
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" name="name" required />
+          </div>
+          <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+              <div class="form-group">
+                <label>Memory</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="memory"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+              <div class="form-group">
+                <label>Type</label>
+                <input type="text" class="form-control" name="type" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Status</label>
+              <input type="text" class="form-control" name="status" required />
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- End of Add Employee Modal HTML -->
+
+<!-- Footer section -->
+<footer class="footer">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <p>&copy; 2023 UniFront</p>
+      </div>
+      <div class="col-md-6 text-right">
+        <p>Developed by UniFront Team</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- End of Footer section -->
